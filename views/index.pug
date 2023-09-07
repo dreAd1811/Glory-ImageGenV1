@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  h1= "AI Image Generation"
+  p Click Button to generate image
+  button#gen(onclick="CallApi();") Generate Image :)
+  p#main empty rn press button to post request to API
+  
+  select#myDropdown(onchange="displayOption()")
+    optgroup(label="Select")
+      option(value="2") Text To Image
+      option(value="3") Cyberpunk
+  p#result
+
+  h2 Enter Text 
+  |          text: 
+  input(name='title', value='', type='text' id="myInput")
+  br 
+  br
+  button#te(onclick="saveText();") Enter

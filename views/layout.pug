@@ -1,0 +1,54 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    <script src="https://cdnjs.deepai.org/deepai.min.js"></script>
+    script.
+      var gen = "";
+      var input_t = '';
+      var api_key = '<your api key>';
+
+      function saveText() {
+        var input = document.getElementById('myInput');
+        input_t = input.value;
+        console.log(input_t);
+      }
+
+      function CallApi() {
+        // Your JavaScript code here
+        console.log("Button clicked!");
+      
+      var text = document.querySelector('#main');
+
+      deepai.setApiKey(api_key);
+      (async function() {
+        var resp = await deepai.callStandardApi(gen , {
+          text: input_t,
+          grid_size: "1",
+          height: "800",
+          width: "800",
+          });
+          console.log(resp);
+          })()
+          text.textContent = "Please wait 15 secs for image generation";
+          console.log(input_t)
+      }
+      function displayOption() {
+        var dropdown = document.getElementById("myDropdown");
+        var selectedOption = dropdown.options[dropdown.selectedIndex].text;
+        var selectedValue =  dropdown.options[dropdown.selectedIndex].value;
+        document.getElementById("result").textContent = 'You have Selected : ' + selectedOption;
+        console.log(selectedOption)
+        if (selectedValue == 3){
+          gen = "cyberpunk-generator"
+        }
+        else{
+          gen = "text2img "
+        }
+        console.log(gen)
+      }
+    
+
+  body
+    block content
