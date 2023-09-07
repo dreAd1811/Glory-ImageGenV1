@@ -1,8 +1,6 @@
 extends layout
 
 block content
-  #particles-js
-    div(id="particles-js") 
       h1#heading= "AI Image Generation"
       img(src="", alt="" id="out_img")
       p#subhead1 Enter Input Text 
@@ -20,7 +18,6 @@ block content
     
       br 
       br
-      // button#te(onclick="saveText();") Enter
     
       button#gen(onclick="saveText(); CallApi(); ") Generate Image :)
     
