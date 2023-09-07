@@ -30,9 +30,16 @@ html
           width: "800",
           });
           console.log(resp);
+          
+          const output_url = resp['output_url'];
+          console.log(output_url)
+          var out_img = document.getElementById("out_img");
+          out_img.src = output_url;
+          
           })()
           text.textContent = "Please wait 15 secs for image generation";
           console.log(input_t)
+
       }
       function displayOption() {
         var dropdown = document.getElementById("myDropdown");
