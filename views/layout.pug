@@ -43,8 +43,11 @@ html
         if (selectedValue == 3){
           gen = "cyberpunk-generator"
         }
-        else{
-          gen = "text2img "
+        else if (selectedValue == 2){
+          gen = "text2img"
+        }
+        else if (selectedValue == 4){
+          gen = "cute-creature-generator"
         }
         console.log(gen)
       }
