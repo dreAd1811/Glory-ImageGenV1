@@ -4,7 +4,12 @@ html
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
     <script src="https://cdnjs.deepai.org/deepai.min.js"></script>
+    script( src='https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.js')
     script.
+      /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+      particlesJS.load('particles-js', 'particles.json', function() {
+        console.log('callback - particles.js config loaded');
+        });
       var gen = "";
       var input_t = '';
       var api_key = '<your api key>';

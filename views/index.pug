@@ -1,25 +1,28 @@
 extends layout
 
 block content
-  h1= "AI Image Generation"
-  p Click Button to generate image
-  button#gen(onclick="saveText(); CallApi(); ") Generate Image :)
-  p#main empty rn press button to post request to API
-  
-  select#myDropdown(onchange="displayOption()")
-    optgroup(label="Select")
-      option(value="2") Text To Image
-      option(value="3") Cyberpunk
-      option(value="4") Cute Creature
-  p#result
-
-  h2 Enter Text 
-  |          text: 
-  input(name='title', value='', type='text' id="myInput")
-  br 
-  br
-  // button#te(onclick="saveText();") Enter
-
-  img(src="", alt="" id="out_img")
-
-  p#out 
+  #particles-js
+    div(id="particles-js") 
+      h1#heading= "AI Image Generation"
+      img(src="", alt="" id="out_img")
+      p#subhead1 Enter Input Text 
+      input(name='title', value='', type='text' id="myInput")
+     
+      p#subhead2 Choose Image Generator Type
+      
+      select#myDropdown(onchange="displayOption()")
+        optgroup(label="Select")
+          option(value="2") Text To Image
+          option(value="3") Cyberpunk
+          option(value="4") Cute Creature
+      p#result
+    
+    
+      br 
+      br
+      // button#te(onclick="saveText();") Enter
+    
+      button#gen(onclick="saveText(); CallApi(); ") Generate Image :)
+    
+    
+      p#out 

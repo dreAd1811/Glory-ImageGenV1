@@ -2,6 +2,7 @@
   "name": "aideep",
   "version": "0.0.0",
   "private": true,
+  
   "scripts": {
     "start": "node ./bin/www",
     "devstart": "SET DEBUG=aideep:* & nodemon ./bin/www"
@@ -13,6 +14,7 @@
     "express": "^4.18.2",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
+    "particles.js": "^2.0.0",
     "pug": "^3.0.2"
   },
   "devDependencies": {

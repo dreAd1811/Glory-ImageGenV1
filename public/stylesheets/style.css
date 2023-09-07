@@ -4,7 +4,6 @@
 }
 
 body {
-  padding: 50px;
   font-family: Volkswagen-Bold;
 }
 
@@ -14,4 +13,42 @@ a {
 
 body{
   background-color: aquamarine;
+  height: 100%;
+  width: 100%;
+}
+#heading{
+  font-size: 50px;
+}
+
+#subhead1{
+  font-size: 30px;
+}
+
+#myInput{
+  width: 500px;
+  height: 55px;
+  font-size: 20px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border: 2px solid black;
+  border-radius: 40px;
+}
+
+#particles-js{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  padding: 0px;
+}
+
+#myDropdown{
+  padding: 10px;
+  font-size: 20px;
+  width: 500px;
+  font-family: Volkswagen-Bold;
+}
+
+#subhead2{
+  font-size: 30px;
 }
