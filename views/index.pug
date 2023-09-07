@@ -3,7 +3,7 @@ extends layout
 block content
   h1= "AI Image Generation"
   p Click Button to generate image
-  button#gen(onclick="CallApi();") Generate Image :)
+  button#gen(onclick="saveText(); CallApi(); ") Generate Image :)
   p#main empty rn press button to post request to API
   
   select#myDropdown(onchange="displayOption()")
@@ -18,7 +18,7 @@ block content
   input(name='title', value='', type='text' id="myInput")
   br 
   br
-  button#te(onclick="saveText();") Enter
+  // button#te(onclick="saveText();") Enter
 
   img(src="", alt="" id="out_img")
 

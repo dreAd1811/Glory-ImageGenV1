@@ -38,7 +38,6 @@ html
           
           })()
           text.textContent = "Please wait 15 secs for image generation";
-          console.log(input_t)
 
       }
       function displayOption() {
@@ -47,7 +46,7 @@ html
         var selectedValue =  dropdown.options[dropdown.selectedIndex].value;
         document.getElementById("result").textContent = 'You have Selected : ' + selectedOption;
         console.log(selectedOption)
-        if (selectedValue == 3){
+        if (selectedValue == 3){ 
           gen = "cyberpunk-generator"
         }
         else if (selectedValue == 2){
