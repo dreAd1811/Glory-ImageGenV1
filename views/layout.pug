@@ -12,12 +12,12 @@ html
       function saveText() {
         var input = document.getElementById('myInput');
         input_t = input.value;
-        console.log(input_t);
+        // console.log(input_t);
       }
 
       function CallApi() {
         // Your JavaScript code here
-        console.log("Button clicked!");
+        console.log("Button clicked! sending api request");
       
       var text = document.querySelector('#main');
 
@@ -29,10 +29,10 @@ html
           height: "800",
           width: "800",
           });
-          console.log(resp);
+           // console.log(resp);
           
           const output_url = resp['output_url'];
-          console.log(output_url)
+          // console.log(output_url)
           var out_img = document.getElementById("out_img");
           out_img.src = output_url;
           
@@ -45,7 +45,7 @@ html
         var selectedOption = dropdown.options[dropdown.selectedIndex].text;
         var selectedValue =  dropdown.options[dropdown.selectedIndex].value;
         document.getElementById("result").textContent = 'You have Selected : ' + selectedOption;
-        console.log(selectedOption)
+         // console.log(selectedOption)
         if (selectedValue == 3){ 
           gen = "cyberpunk-generator"
         }
@@ -55,7 +55,7 @@ html
         else if (selectedValue == 4){
           gen = "cute-creature-generator"
         }
-        console.log(gen)
+        // console.log(gen)
       }
     
 
