@@ -14,6 +14,7 @@ html
         input_t = input.value;
         // console.log(input_t);
       }
+      var text1  = document.getElementById("pr");
 
       function CallApi() {
         // Your JavaScript code here
@@ -37,14 +38,21 @@ html
           out_img.src = output_url;
           
           })()
-          text.textContent = "Please wait 15 secs for image generation";
+          text1  = document.getElementById("pr");
+          text1.textContent = "Please wait 15-20 secs for image generation";
 
       }
       function displayOption() {
         var dropdown = document.getElementById("myDropdown");
         var selectedOption = dropdown.options[dropdown.selectedIndex].text;
         var selectedValue =  dropdown.options[dropdown.selectedIndex].value;
-        document.getElementById("result").textContent = 'You have Selected : ' + selectedOption;
+        if (selectedOption == "--Select--"){
+          document.getElementById("result").textContent = 'Please Select A Type';
+        }
+        else {
+          document.getElementById("result").textContent = 'You have Selected : ' + selectedOption;
+        }
+
          // console.log(selectedOption)
         if (selectedValue == 3){ 
           gen = "cyberpunk-generator"
@@ -55,9 +63,8 @@ html
         else if (selectedValue == 4){
           gen = "cute-creature-generator"
         }
-        // console.log(gen)
       }
     
 
   body
-    block content
+    block contenst
