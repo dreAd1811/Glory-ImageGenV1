@@ -1,8 +1,17 @@
+@font-face {
+  font-family: Volkswagen-Bold;
+  src: url(fonts/Volkswagen-Bold.ttf);
+}
+
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: Volkswagen-Bold;
 }
 
 a {
   color: #00B7FF;
+}
+
+body{
+  background-color: aquamarine;
 }
