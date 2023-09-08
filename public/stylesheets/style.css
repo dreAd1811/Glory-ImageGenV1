@@ -21,21 +21,17 @@ body {
   font-family: Volkswagen-Bold;
 } 
 
-a {
-  color: #00B7FF;
-}
-
 button {
   width: 200px;
   height: 80px;
   border-radius:  40px;
   background-color: transparent;
-  color: white;
+  color: black;
   position: relative;
   overflow: hidden;
   font-size: 20px;
   font-weight: bold;
-  border: 2px solid white;
+  border: 2px solid black;
   font-size: 30px;
   font-family: Volkswagen-Bold;
 }
@@ -51,9 +47,6 @@ body{
 }
 
 
-#subhead1{
-  font-size: 30px;
-}
 
 #myInput{
   width: 500px;
@@ -62,9 +55,11 @@ body{
   background-color: transparent;
   outline: none;
   border: none;
-  border: 2px solid white;
+  border: 2px solid black;
   border-radius: 40px;
   font-family: Volkswagen-Bold;
+  padding: 5px 30px 5px ;
+  color: #000000;
 }
 
 #myDropdown{
@@ -74,9 +69,9 @@ body{
   font-family: Volkswagen-Bold;
   border: none;
   outline: none;
-  border: 2px solid white;
+  border: 2px solid black;
   background-color: transparent;
-  color: white;
+  color: black;
 }
 
 #subhead2{
@@ -92,7 +87,8 @@ body{
   outline: none;
   color: #ffffff;
   border: none;
-  border: 2px solid white;
+  border: 2px solid black;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
   font-family: Volkswagen-Bold;
   display: flex;
@@ -147,40 +143,12 @@ body{
     color: aquamarine;
 }
 
-#imgs{
-  width: 94%;
-  height: 95%;
-  display: flex;
-  align-items: center;
-  margin: 20px;
-  padding-left: 5px;
-  background: linear-gradient();
-  background: linear-gradient(45deg,hsl(320, 3%, 19%),#282830,#232323,#141408,#000000);
-  position: relative;
-}
-
-
-
-
 #main2{
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-#imgs {
-  position: relative;
-}
-/* pseudo-class for making gradient shadow. */
-
-#imgs::after {
-  content: "";
-  position: absolute;
-  inset: -.625em;
-  background: linear-gradient(45deg,hsl(320, 3%, 19%),#282830,#232323,#141408,#000000);
-  filter: blur(2.5em);
-  z-index: -1;
-}
 
 #p-container {
   
@@ -247,7 +215,7 @@ body.toggled > #tiles > .tile:hover {
   outline: none;
   color: #ffffff;
   border: none;
-  border: 2px solid white;
+  border: 2px solid black;
   border-radius: 20px;
   font-family: Volkswagen-Bold;
   display: flex;
@@ -259,6 +227,30 @@ body.toggled > #tiles > .tile:hover {
   
 }
 
-#imgs {
-  position: relative;
+#subhead1{
+  font-size: 30px;
+  color: black;
+  
+}
+#subhead2{
+  font-size: 30px;
+  color: #000000;
+  
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  
+  background: #11e8bb; /* Old browsers */
+  background: -moz-linear-gradient(top,  #11e8bb 0%, #8200c9 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #11e8bb 0%,#8200c9 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #11e8bb 0%,#8200c9 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#11e8bb', endColorstr='#8200c9',GradientType=0 ); /* IE6-9 */
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
 }
