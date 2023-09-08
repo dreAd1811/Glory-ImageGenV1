@@ -13,6 +13,7 @@ html
       var api_key = '3057885b-8c29-49cc-9732-2dafb82461db';
       var output_url = "";
       var output_url_enh = "";
+      var default_img = "https://images.deepai.org/machine-learning-models/0c7ba850aa2443d7b40f9a45d9c86d3f/text2imgthumb.jpeg";
 
       function saveText() {
         var input = document.getElementById('myInput');
@@ -22,31 +23,37 @@ html
       var text1  = document.getElementById("pr");
 
       function CallApi() {
-        
-        console.log("Button clicked! sending api request");
-      
-      var text = document.querySelector('#main');
-
-      deepai.setApiKey(api_key);
-      (async function() {
-        var resp = await deepai.callStandardApi(gen , {
-          text: input_t,
-          grid_size: "1",
-          height: "550",
-          width: "600",
-          });
-           // console.log(resp);
-          
-          output_url = resp['output_url'];
-          // console.log(output_url)
-          var out_img = document.getElementById("out_img");
-          out_img.src = output_url;
-          
-          })()
-          text1  = document.getElementById("pr");
-          text1.textContent = "Please wait 15-20 secs for image generation";
-
+      if(gen=="" || input_t==""){
+        alert("Please Input Arguments")
       }
+      else{
+                
+        console.log("Button clicked! sending api request");
+        
+        var text = document.querySelector('#main');
+  
+        deepai.setApiKey(api_key);
+        (async function() {
+          var resp = await deepai.callStandardApi(gen , {
+            text: input_t,
+            grid_size: "1",
+            height: "550",
+            width: "600",
+            });
+             // console.log(resp);
+            
+            output_url = resp['output_url'];
+            // console.log(output_url)
+            var out_img = document.getElementById("out_img");
+            out_img.src = output_url;
+            
+            })()
+            text1  = document.getElementById("pr");
+            text1.textContent = "Please wait 15-20 secs for image generation";
+  
+        }
+      }
+
       function displayOption() {
         var dropdown = document.getElementById("myDropdown");
         var selectedOption = dropdown.options[dropdown.selectedIndex].text;
@@ -71,23 +78,25 @@ html
       }
 
       function enhanceImg(){
-        console.log("image enhanced request sent to api")
-        deepai.setApiKey(api_key);
-        (async function() {
-          var enhance = await deepai.callStandardApi("torch-srgan", {
-            image: output_url,
-            });
-            console.log(enhance);
-            output_url_enh = enhance['output_url'];
-            var out_img_enh = document.getElementById("out_img");
-            out_img_enh.src = output_url_enh;
-            console.log(output_url_enh)
-            console.log("new url set")  
-
-            })()
-            
-            
-      }
+        if(output_url=default_img){
+          alert("Please Generate Image First")
+        }
+        else {
+          console.log("image enhanced request sent to api")
+          deepai.setApiKey(api_key);
+          (async function() {
+            var enhance = await deepai.callStandardApi("torch-srgan", {
+              image: output_url,
+              });
+              console.log(enhance);
+              output_url_enh = enhance['output_url'];
+              var out_img_enh = document.getElementById("out_img");
+              out_img_enh.src = output_url_enh;
+              console.log(output_url_enh)
+              console.log("new url set")  
+              })()
+              }
+        }
 
   body
     #threejs-container
