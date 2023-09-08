@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "animejs": "^3.2.1",
+    "axios": "^1.5.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "deepai": "^1.0.23",
@@ -16,7 +17,8 @@
     "morgan": "~1.9.1",
     "particles.js": "^2.0.0",
     "pug": "^3.0.2",
-    "three": "^0.156.1"
+    "three": "^0.156.1",
+    "node-fetch": "^2.0.0"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
