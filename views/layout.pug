@@ -7,9 +7,12 @@ html
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.9/dat.gui.min.js"></script>
     
     script.
+      // Set Variables
       var gen = "";
       var input_t = '';
       var api_key = '3057885b-8c29-49cc-9732-2dafb82461db';
+      var output_url = "";
+      var output_url_enh = "";
 
       function saveText() {
         var input = document.getElementById('myInput');
@@ -19,7 +22,7 @@ html
       var text1  = document.getElementById("pr");
 
       function CallApi() {
-        // Your JavaScript code here
+        
         console.log("Button clicked! sending api request");
       
       var text = document.querySelector('#main');
@@ -34,7 +37,7 @@ html
           });
            // console.log(resp);
           
-          const output_url = resp['output_url'];
+          output_url = resp['output_url'];
           // console.log(output_url)
           var out_img = document.getElementById("out_img");
           out_img.src = output_url;
@@ -65,6 +68,25 @@ html
         else if (selectedValue == 4){
           gen = "cute-creature-generator"
         }
+      }
+
+      function enhanceImg(){
+        console.log("image enhanced request sent to api")
+        deepai.setApiKey(api_key);
+        (async function() {
+          var enhance = await deepai.callStandardApi("torch-srgan", {
+            image: output_url,
+            });
+            console.log(enhance);
+            output_url_enh = enhance['output_url'];
+            var out_img_enh = document.getElementById("out_img");
+            out_img_enh.src = output_url_enh;
+            console.log(output_url_enh)
+            console.log("new url set")  
+
+            })()
+            
+            
       }
 
   body
