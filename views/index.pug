@@ -1,26 +1,41 @@
 extends layout
 
 block content
-      h1#heading= "AI Image Generation"
-      img(src="", alt="" id="out_img")
-      p#subhead1 Enter Input Text 
-      input(name='title', value='', type='text' id="myInput")
-     
-      p#subhead2 Choose Image Generator Type
       
-      select#myDropdown(onchange="displayOption()")
-          option(value="0") --Select--
-          option(value="2") Text To Image
-          option(value="3") Cyberpunk
-          option(value="4") Cute Creature
-      p#result
+      div(id="cont1")
+        div(id="cont")
+        
+          div(id="imgs")
+            
+          
+            img(src="https://images.deepai.org/machine-learning-models/0c7ba850aa2443d7b40f9a45d9c86d3f/text2imgthumb.jpeg", alt="" id="out_img" height="550px" width="600px")
+          div(id="content")
+          
+            p#subhead1 Enter Input Text 
+            input(name='title', value='', type='text' id="myInput")
+           
+            p#subhead2 Choose Image Generator Type
+            
+            select#myDropdown(onchange="displayOption()")
+                option(value="0" class="o") --Select--
+                option(value="2" class = "o") Text To Image
+                option(value="3" class="o") Cyberpunk
+                option(value="4" class="o") Cute Creature
+            p#result
+      
+            p#pr
+          
+            br 
+            br
+          
+            button#gen(onclick="saveText(); CallApi(); ") Generate
+        
+        
+          p#out 
+      
 
-      p#pr
-    
-      br 
-      br
-    
-      button#gen(onclick="saveText(); CallApi(); ") Generate Image :)
-    
-    
-      p#out 
+      <script src="https://pixijs.download/release/pixi.js"></script>
+      <script src="/javascripts/background.js"></script>
+
+      
+          

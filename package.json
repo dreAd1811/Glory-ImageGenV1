@@ -2,12 +2,12 @@
   "name": "aideep",
   "version": "0.0.0",
   "private": true,
-  
   "scripts": {
     "start": "node ./bin/www",
     "devstart": "SET DEBUG=aideep:* & nodemon ./bin/www"
   },
   "dependencies": {
+    "animejs": "^3.2.1",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "deepai": "^1.0.23",
@@ -15,7 +15,8 @@
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
     "particles.js": "^2.0.0",
-    "pug": "^3.0.2"
+    "pug": "^3.0.2",
+    "three": "^0.156.1"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"

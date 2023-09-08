@@ -5,20 +5,37 @@
 
 body {
   font-family: Volkswagen-Bold;
-}
+} 
 
 a {
   color: #00B7FF;
+}
+
+button {
+  width: 200px;
+  height: 80px;
+  border-radius:  40px;
+  background-color: transparent;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  font-size: 20px;
+  font-weight: bold;
+  border: 2px solid white;
+  font-size: 30px;
+  font-family: Volkswagen-Bold;
 }
 
 body{
   background-color: aquamarine;
   height: 100%;
   width: 100%;
+  display: flex;
+  margin: 0px;
+  align-items: center;
+  flex-direction: column;
 }
-#heading{
-  font-size: 50px;
-}
+
 
 #subhead1{
   font-size: 30px;
@@ -31,8 +48,9 @@ body{
   background-color: transparent;
   outline: none;
   border: none;
-  border: 2px solid black;
+  border: 2px solid white;
   border-radius: 40px;
+  font-family: Volkswagen-Bold;
 }
 
 #myDropdown{
@@ -40,8 +58,179 @@ body{
   font-size: 20px;
   width: 500px;
   font-family: Volkswagen-Bold;
+  border: none;
+  outline: none;
+  border: 2px solid white;
+  background-color: transparent;
+  color: white;
 }
 
 #subhead2{
   font-size: 30px;
 }
+
+
+
+#content{
+  width: fit-content;
+  padding: 20px;
+  background-color: transparent;
+  outline: none;
+  color: #ffffff;
+  border: none;
+  border: 2px solid white;
+  border-radius: 20px;
+  font-family: Volkswagen-Bold;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  backdrop-filter: blur(10px);
+  padding: 35px;
+
+}
+
+#cont{
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 100px;
+  padding-right: 0px;
+  padding-left: 50px;
+  position: relative;
+  padding-top: 5%;
+  padding-bottom: 20px;
+}
+#gen:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 0%;
+  background-color: #ffffff;
+  color: black;
+  transition: all 0.5s;
+  z-index: -1;
+}
+
+#gen:hover:before{
+  height: 100%;
+}
+
+#gen:hover{
+  color: black;
+}
+
+#cont1{
+  display: flex;
+  flex-direction: column;
+  column-gap: 40px;
+}
+
+.o{
+    background-color: black;
+    color: aquamarine;
+}
+
+#imgs{
+  width: 94%;
+  height: 95%;
+  display: flex;
+  align-items: center;
+  margin: 20px;
+  padding-left: 5px;
+  background: linear-gradient();
+  background: linear-gradient(45deg,#fb0094,#0000ff,#00ff00,#ffff00,#ff0000);
+  position: relative;
+}
+
+
+
+
+#main2{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+#imgs {
+  position: relative;
+}
+/* pseudo-class for making gradient shadow. */
+
+#imgs::after {
+  content: "";
+  position: absolute;
+  inset: -.625em;
+  background: linear-gradient(45deg,#fb0094,#0000ff,#00ff00,#ffff00,#ff0000);
+  filter: blur(2.5em);
+  z-index: -1;
+}
+
+#p-container {
+  
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+:root {
+  --g1: rgb(98, 0, 234);
+  --g2: rgb(236, 64, 122);
+}
+
+@keyframes background-pan {
+  from {
+    background-position: 0% center;
+  }
+  
+  to {
+    background-position: -200% center;
+  }
+}
+
+body {
+  animation: background-pan 10s linear infinite;
+  background: linear-gradient(
+    to right,
+    var(--g1),
+    var(--g2),
+    var(--g1)
+  );
+  background-size: 200%;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0px;
+}
+
+body.toggled {
+  animation: none;
+}
+
+body.toggled > #title {
+  opacity: 0;
+}
+
+body.toggled > #icon {
+  opacity: 1;
+}
+
+body.toggled > #tiles > .tile:hover {
+  opacity: 0.1 !important;
+}
+
+.centered {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+
+
+
