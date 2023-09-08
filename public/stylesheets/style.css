@@ -2,8 +2,22 @@
   font-family: Volkswagen-Bold;
   src: url(fonts/Volkswagen-Bold.ttf);
 }
+div{
+  position:absolute;
+}
+
+canvas{
+  top: 0;
+  left: 0;
+  position: static;
+}
+
 
 body {
+  position: absolute;
+  z-index:0;
+  top: 12px;
+  left: 12px;
   font-family: Volkswagen-Bold;
 } 
 
@@ -27,7 +41,7 @@ button {
 }
 
 body{
-  background-color: aquamarine;
+  background-color: transparent;
   height: 100%;
   width: 100%;
   display: flex;
@@ -99,6 +113,7 @@ body{
   position: relative;
   padding-top: 5%;
   padding-bottom: 20px;
+  background-color: transparent;
 }
 #gen:before {
   content: "";
@@ -140,7 +155,7 @@ body{
   margin: 20px;
   padding-left: 5px;
   background: linear-gradient();
-  background: linear-gradient(45deg,#fb0094,#0000ff,#00ff00,#ffff00,#ff0000);
+  background: linear-gradient(45deg,hsl(320, 3%, 19%),#282830,#232323,#141408,#000000);
   position: relative;
 }
 
@@ -162,7 +177,7 @@ body{
   content: "";
   position: absolute;
   inset: -.625em;
-  background: linear-gradient(45deg,#fb0094,#0000ff,#00ff00,#ffff00,#ff0000);
+  background: linear-gradient(45deg,hsl(320, 3%, 19%),#282830,#232323,#141408,#000000);
   filter: blur(2.5em);
   z-index: -1;
 }
@@ -193,17 +208,11 @@ body{
 }
 
 body {
-  animation: background-pan 10s linear infinite;
-  background: linear-gradient(
-    to right,
-    var(--g1),
-    var(--g2),
-    var(--g1)
-  );
   background-size: 200%;
   height: 100vh;
   overflow: hidden;
   margin: 0px;
+  
 }
 
 body.toggled {
@@ -231,6 +240,25 @@ body.toggled > #tiles > .tile:hover {
 
 
 
+#content{
+  width: fit-content;
+  padding: 20px;
+  background-color: transparent;
+  outline: none;
+  color: #ffffff;
+  border: none;
+  border: 2px solid white;
+  border-radius: 20px;
+  font-family: Volkswagen-Bold;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  backdrop-filter: blur(10px);
+  padding: 35px;
+  position: inherit;
+  
+}
 
-
-
+#imgs {
+  position: relative;
+}
